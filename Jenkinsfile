@@ -6,7 +6,7 @@ pipeline {
 			agent any
 			steps { 
 				script {
-					echo "code 1"
+					echo "code .. 1"
 				       }
 				}
 			}
