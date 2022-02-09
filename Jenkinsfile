@@ -21,7 +21,7 @@ pipeline {
         stage ("stage 4 - perform unit testing") {
             steps {
                 sh "/home/ec2-user/apache-maven-3.6.3/bin/mvn test"
-                sh "findme"
+                echo "findme"
                 sh "ls"
             }
             post {
