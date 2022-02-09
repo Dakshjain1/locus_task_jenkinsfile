@@ -21,12 +21,10 @@ pipeline {
         stage ("stage 4 - perform unit testing") {
             steps {
                 sh "/home/ec2-user/apache-maven-3.6.3/bin/mvn test"
-                echo "findme"
-                sh "ls"
             }
             post {
                 always {
-                    junit './target/surefire-reports/*.xml'
+                    junit 'target/surefire-reports/*.xml'
                 }
             }
         }
