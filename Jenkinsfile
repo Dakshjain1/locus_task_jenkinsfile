@@ -6,7 +6,7 @@ pipeline {
             agent any
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[credentialsId: 'Dakshjain1', url: 'https://github.com/Dakshjain1/locus_task.git']]])
-                sh "ls"
+                sh "pwd"
             }
         }
        
