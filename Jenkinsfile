@@ -32,6 +32,11 @@ pipeline {
             steps {
                 sh "/home/ec2-user/apache-maven-3.6.3/bin/mvn package"
             }
+            post {
+                always {
+                    archiveArtifacts artifacts: 'target/my-app-1.0-SNAPSHOT.jar', fingerprint: true
+                }
+            }
         }
         stage ("stage 6 - test the jar file") {
             steps {
