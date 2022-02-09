@@ -11,7 +11,7 @@ pipeline {
         }
          stage ("stage 2 - validate the code") {
             steps {
-                sh "sudo /home/ec2-user/apache-maven-3.6.3/bin/mvn validate"
+                sh "/home/ec2-user/apache-maven-3.6.3/bin/mvn validate"
             }
         }
         stage ("stage 3 - compile the code") {
