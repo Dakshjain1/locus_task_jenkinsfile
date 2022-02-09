@@ -12,19 +12,19 @@ pipeline {
         stage ("stage 2 - validate the code") {
             agent any
             steps {
-                sh "mvn validate"
+                sh "/maven/apache-maven-3.6.3/bin/mvn validate"
             }
         }
         stage ("stage 3 - compile the code") {
             agent any
             steps {
-                sh "mvn compile"
+                sh "/maven/apache-maven-3.6.3/bin/mvn compile"
             }
         }
         stage ("stage 4 - perform unit testing") {
             agent any
             steps {
-                sh "mvn test"
+                sh "/maven/apache-maven-3.6.3/bin/mvn test"
             }
             post {
                 always {
@@ -35,7 +35,7 @@ pipeline {
         stage ("stage 5 - prepare the package") {
             agent any
             steps {
-                sh "mvn package"
+                sh "/maven/apache-maven-3.6.3/bin/mvn package"
             }
         }
         stage ("stage 6 - test the jar file") {
