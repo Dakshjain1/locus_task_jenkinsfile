@@ -5,7 +5,8 @@ pipeline {
         stage ("stage 1 - clone github code") {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[credentialsId: 'Dakshjain1', url: 'https://github.com/Dakshjain1/locus_task.git']]])
-                sh "ls"
+                echo "findme"
+		sh "ls"
             }
         }
          stage ("stage 2 - validate the code") {
