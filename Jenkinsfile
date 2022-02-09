@@ -1,4 +1,4 @@
-pipeline {
+pipeline {
     agent any
 
     stages {
@@ -6,7 +6,6 @@ pipeline {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[credentialsId: 'Dakshjain1', url: 'https://github.com/Dakshjain1/locus_task.git']]])
                 sh "ls"
-                sh 'cat pom.xml'
             }
         }
          stage ("stage 2 - validate the code") {
@@ -22,6 +21,8 @@ pipeline {
         stage ("stage 4 - perform unit testing") {
             steps {
                 sh "/home/ec2-user/apache-maven-3.6.3/bin/mvn test"
+                sh "findme"
+                sh "ls"
             }
             post {
                 always {
