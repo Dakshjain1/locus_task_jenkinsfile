@@ -35,7 +35,7 @@ pipeline {
         }
         stage ("stage 6 - test the jar file") {
             steps {
-                sh "java -jar targets/my-app-1.0-SNAPSHOT.jar"
+                sh "java -jar target/my-app-1.0-SNAPSHOT.jar"
             }
         }
        stage ("final stage - cleaning workspace") {
