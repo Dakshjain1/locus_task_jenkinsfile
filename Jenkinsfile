@@ -6,7 +6,7 @@ pipeline {
             agent any
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[credentialsId: 'Dakshjain1', url: 'https://github.com/Dakshjain1/locus_task_jenkinsfile.git']]])
-                sh "ls*"
+                sh "ls"
             }
         }
         // stage ("stage 1 ") {
